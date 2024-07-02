@@ -47,7 +47,8 @@ def get_appname(file):
 
 appname = get_appname('temp/title.txt')
 url = get_url('temp/body.txt')
-
+print(f"Appname: {appname}")
+print(f"Image URL: {url}")
 
 print("🚀🚀🚀 GENERATING SUMMARY 🚀🚀🚀")
 
