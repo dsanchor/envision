@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  title: TaskManager API
+  title: Task Manager API
   version: 1.0.0
 paths:
   /tasks:
@@ -28,13 +28,13 @@ paths:
           description: Task created
   /tasks/{id}:
     put:
-      summary: Update a task
+      summary: Update an existing task
       parameters:
         - in: path
           name: id
           required: true
           schema:
-            type: string
+            type: integer
       requestBody:
         required: true
         content:
@@ -51,7 +51,7 @@ paths:
           name: id
           required: true
           schema:
-            type: string
+            type: integer
       responses:
         '204':
           description: Task deleted
@@ -61,10 +61,14 @@ components:
       type: object
       properties:
         id:
-          type: string
+          type: integer
         name:
           type: string
         description:
           type: string
         done:
           type: boolean
+      required:
+        - name
+        - description
+        - done
